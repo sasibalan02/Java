@@ -6,17 +6,20 @@ class Animal {
     String name;
     String type;
     int age;
+    String birthplace;
 
-    public Animal(String name, String type, int age) {
+    public Animal(String name, String type, int age, String birthplace) {
         this.name = name;
         this.type = type;
         this.age = age;
+        this.birthplace = birthplace;
     }
 
     public void displayInfo() {
-        System.out.println("Name: " + name);
-        System.out.println("Type: " + type);
-        System.out.println("Age: " + age + " years\n");
+        System.out.println("Name       : " + name);
+        System.out.println("Type       : " + type);
+        System.out.println("Age        : " + age + " years");
+        System.out.println("Birthplace : " + birthplace + "\n");
     }
 }
 
@@ -31,8 +34,11 @@ public class ZooManagementSystem {
         String type = scanner.next();
         System.out.print("Enter animal age: ");
         int age = scanner.nextInt();
+        scanner.nextLine(); // consume newline
+        System.out.print("Enter animal birthplace: ");
+        String birthplace = scanner.nextLine();
 
-        Animal animal = new Animal(name, type, age);
+        Animal animal = new Animal(name, type, age, birthplace);
         zoo.add(animal);
         System.out.println("Animal added successfully!\n");
     }
